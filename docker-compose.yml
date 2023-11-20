@@ -1,0 +1,29 @@
+version: "3"
+services:
+  apache:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ./htdocs:/var/www/html/
+#    links:
+#      - mariadb:db
+    networks:
+      - default
+#  mariadb:
+#    image: bitnami/mariadb:10.11
+#    ports:
+#      - "3306:3306"
+#    environment:
+#      ALLOW_EMPTY_PASSWORD: yes
+#    volumes:
+#      - ./mariadb:/bitnami/mariadb
+#    networks:
+#      - default
+#  phpmyadmin:
+#    image: phpmyadmin/phpmyadmin
+#    links:
+#      - mariadb:db
+#    ports:
+#      - 81:80
+#    environment: {}
